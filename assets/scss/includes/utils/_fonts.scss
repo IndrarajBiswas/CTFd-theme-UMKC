@@ -1,0 +1,35 @@
+@use "~/@fontsource/press-start-2p/scss/mixins" as PressStart2P;
+@use "~/@fontsource/vt323/scss/mixins" as VT323;
+@use "~/@fontsource/space-mono/scss/mixins" as SpaceMono;
+
+// Load retro-inspired typefaces for the hacker aesthetic
+@include PressStart2P.faces($directory: "../webfonts");
+@include VT323.faces($directory: "../webfonts");
+@include SpaceMono.faces($directory: "../webfonts");
+
+$fa-font-path: "../webfonts";
+@import "~/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~/@fortawesome/fontawesome-free/scss/brands.scss";
+
+html,
+body,
+.container {
+  font-family: "VT323", "Fira Code", "Source Code Pro", monospace;
+}
+
+.jumbotron .container {
+  font-family: "Press Start 2P", "VT323", Courier, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Press Start 2P", "VT323", Courier, monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

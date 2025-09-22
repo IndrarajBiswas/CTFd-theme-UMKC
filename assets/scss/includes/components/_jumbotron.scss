@@ -1,0 +1,55 @@
+/* Jumbotron styles
+-------------------------------------------------- */
+
+// Move down content because we have a fixed navbar that is 3.5rem tall
+main {
+  padding-top: 3.5rem;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  border: 1px solid var(--retro-border);
+  border-radius: 1.25rem;
+  background: linear-gradient(130deg, rgba(0, 93, 170, 0.38), rgba(0, 28, 61, 0.6) 45%, rgba(255, 184, 28, 0.16) 95%);
+  box-shadow: 0 20px 45px rgba(0, 126, 255, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  color: var(--retro-text);
+  backdrop-filter: blur(12px) saturate(140%);
+  overflow: hidden;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 25%, rgba(255, 184, 28, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 15%, rgba(0, 142, 255, 0.2), transparent 52%);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+}
+
+.jumbotron .container {
+  position: relative;
+  z-index: 1;
+}
+
+.jumbotron h1 {
+  color: var(--retro-text);
+  text-shadow: 0 0 18px var(--retro-glow), 0 0 14px var(--retro-gold-glow);
+  letter-spacing: 0.4em;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+}
+
+.jumbotron p {
+  color: var(--retro-text-muted);
+  text-shadow: 0 0 8px rgba(0, 126, 255, 0.25);
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 4rem 2rem;
+  }
+}
